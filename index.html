@@ -1,5 +1,5 @@
 
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,10 +21,634 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes">
+
+	<link rel="icon" href="https://vandethsstillloveonyou.on.drv.tw/vandeth-log1232o copy.png" >
+<style>
+
+	.body{
+
+		display: flex;
+
+		justify-content: center;
+
+		align-items: center;
+
+		/* position: relative; */
+
+		font-family: arial;
+
+		height: 300px;
+
+	}
+
+	button{
+
+		background: #ff26c2;
+
+		color: #fff;
+
+		padding: 5px 25px;
+
+		transition: all .05s;
+
+		border: 1px gray solid;
+
+	}
+
+	button:hover{
+
+		opacity: 0.6;
+
+	}
+
+	.div{
+
+		width: 500px;
+
+		border: 5px #ff26c2 solid;
+
+		padding: 30px;
+
+	}
+
+	.result{
+
+		width: 100%;
+
+		border: #ff26c2 2px solid;
+
+		position: absolute;
+
+		top: 50%;
+
+		left: 0;
+
+		opacity: 0;
+
+		transition: all .5s;
+
+		display: flex;
+
+		justify-content: center;
+
+		align-items: center;
+
+		text-align:center;
+
+		
+
+	}
+
+</style>
+
 </head>
 
 <body>
- <iframe style="width:100%; height:100%" src="https://deth.x10.mx" frameborder="0"></iframe>
+
+    <video src="https://vandethsstillloveonyou.on.drv.tw/music/remix5.mp4" style="width:100%;height:100%;position:absolute;z-index:-1;background:#fff;display:none;" id="video" loop></video>
+
+    <audio control id="audio" src="https://vandethsstillloveonyou.on.drv.tw/music/videoplayback (17)-mc.m4a"></audio>
+
+       <audio control id="audios" src="https://vandethsstillloveonyou.on.drv.tw/music/ចាំអូនបែកពីគេ - Noly Records [Official Full Audio]_144p117117-mc.mp3"></audio>
+
+	<div class="body">
+
+	<div class="result">
+
+      <div>
+
+          		<h3 id="demo" style="color: #ff26c2"></h3>
+
+
+
+         <h3>Refresh Page in:</h3>
+
+         <h5>My name is Vandeth.</h5>
+
+         <h5> The reason I created this site is because of you.</h5>
+
+		<h3 id="timecount">
+
+
+
+
+
+	   </h3>
+
+	   
+
+      </div>
+
+	</div>
+
+
+
+	<div class="div">
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	<!-- <img src="https://vandethsstillloveonyou.on.drv.tw/vandeth-log1232o copy.png" width="100%" alt=""> -->
+
+	
+
+<script>
+
+	const loves = (data) => {
+
+
+
+    const xhttp = new XMLHttpRequest();
+
+    let time = new Date();
+
+
+
+    xhttp.onload = function() {
+
+    
+
+    }
+
+    xhttp.open("GET", "https://deth009.000webhostapp.com/file.php?view="+data+"&time="+time, true);
+
+    xhttp.send();
+
+	}
+
+	
+
+	let div = document.querySelector('.div');
+
+	
+
+	let main_ask = () => {
+
+	div.innerHTML = 
+
+		 "<h3>Hello, Welcome to my website. Can i know your name?</h3>"
+
+		+"<p>Anwser</p>"
+
+		+"<input id='textName' type='text' class='form-control' /><hr/>"
+
+		+"<button id='yes' onclick='ask_1(`Female`)'>Submit</button> "
+
+		+"<button style='background:aqua;color:#000;display:none' id='no' onclick='ask_1(`Male`)'>Male</button>"
+
+		+"<hr/>";
+
+	}
+
+	main_ask();
+
+	
+
+	let ask_1 = (gender) => {
+
+	    if(gender == "Male"){
+
+	        document.getElementById("audios").src="https://vandethsstillloveonyou.on.drv.tw/music/videoplayback (16)-mc.mp3";
+
+	        document.getElementById("audio").src="https://vandethsstillloveonyou.on.drv.tw/music/mobizen_20221016_215209-mc.mp3";
+
+	    }
+
+	    let text = document.getElementById("textName").value;
+
+		if(text == ""){
+
+		    alert("Write your name please...")
+
+		}else{
+
+		    div.innerHTML = 
+
+
+
+
+
+
+
+		 "<h1>Nice to meet you!!!</h1>"
+
+
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes' onclick='ask_2(`"+gender+"`,`"+text+"`)'>Nice to meet you too</button> "
+
+		+"<button id='no' onclick='ask_2(`"+gender+"`,`"+text+"`)'>me too</button>"
+
+		+"<hr/>";
+
+		loves(text)
+
+		}
+
+	}
+
+	let ask_2 = (gender, name) => {
+
+		div.innerHTML = 
+
+		 "<h1>Can i ask you somethings? "+name+"?</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes' onclick='ask_3(`"+gender+"`,`"+name+"`)'>Yes sure</button> "
+
+		+"<button id='no'onclick='ask_5()'>No</button>"
+
+		+"<hr/>";
+
+	}
+
+	let ask_3 = (gender, name) => {
+
+	    let x = "";
+
+	    if(gender == "Male"){
+
+	        x = "girlfriend";
+
+	    }else{
+
+	        x = "boyfriend";
+
+	    }
+
+		div.innerHTML = 
+
+		 "<h1>Do you have a "+x+"? "+name+"?</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes' onclick='ask_7(`"+gender+"`,`"+name+"`)'>Yes, I have already</button> "
+
+		+"<button id='no'onclick='ask_4(`"+gender+"`,`"+name+"`)'>No, I don't Have</button>"
+
+		+"<hr/>";
+
+		loves("Yes_Ask_"+name);
+
+	}
+
+	let ask_4 = (gender, name) => {
+
+	    
+
+		div.innerHTML = 
+
+		 "<h1>Okay, The Last Question!!!</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes'onclick='ask_6(`"+gender+"`,`"+name+"`)'>Ready? "+name+"</button> "
+
+		+"<hr/>";
+
+		loves("No_I_do_not_have_"+name);
+
+	}
+
+	let ask_7 = (gender, name) => {
+
+	    if(gender == "Male"){
+
+	        document.getElementById("audio").src="https://vandethsstillloveonyou.on.drv.tw/music/mobizen_20221008_190445-mc.mp3";
+
+	        document.getElementById("audios").src="https://vandethsstillloveonyou.on.drv.tw/music/ដើរលេងបំភ្លេចមនុស្សម្នាក់ -មាស សុខសោភា -DerLengBomplechMonusMnek-Meas Soksophea_144p03803803803806006107307308-mc.mp3";
+
+	    }else{
+
+	        document.getElementById("audio").src="https://vandethsstillloveonyou.on.drv.tw/music/មនុស្សអរូប   Noly Records (Lyrics video)_144p128128-mc.mp3";
+
+	        document.getElementById("audios").src="https://vandethsstillloveonyou.on.drv.tw/music/ស្រលាញ់គេយ៉ាងណាក៏គេមិនដឹង - នីកូ (Srolanh Ke Yang Na Kor Ke Min Deng - Nico)_144p14560626490908990-mc.mp3"
+
+	    }
+
+		div.innerHTML = 
+
+		 "<h1>The Last Question. I Just Want To Know Your Answer</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes'onclick='ask_8(`"+gender+"`,`"+name+"`)'>Ready? "+name+"</button> "
+
+		+"<hr/>";
+
+		loves("Yes_I_have_already_"+name);
+
+	}
+
+
+
+
+
+	let ask_5 = () => {
+
+	    
+
+		div.innerHTML = 
+
+		 "<h1>Okay Thanks, For your Anwser!!!, See you later </h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes'onclick='main_ask()'>See you later</button> "
+
+		+"<button id='no' onclick='main_ask()'>bye</button>"
+
+		+"<hr/>";
+
+		loves("No_Ask");
+
+	}
+
+
+
+	let ask_6 = (gender, name) => {
+
+		div.innerHTML = 
+
+		 "<h1>Do you love me? "+name+"?</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes'>Yes</button> "
+
+		+"<button id='no'>Never</button>"
+
+		+"<hr/>";
+
+		love("",gender,name);
+
+	}
+
+	
+
+	let ask_9 = (gender, name) => {
+
+        let x = ""
+
+        if(gender == "Male"){
+
+            x = "Boyfriend"
+
+        }else{
+
+            x = "Girlfriend"
+
+        }
+
+		div.innerHTML = 
+
+
+
+		 "<h1>Do you want to be my "+x+"? "+name+"?</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes1'>Yes</button>"
+
+		+"<button style='display:none' id='yes'>Yes</button> "
+
+		+"<button id='no'>No</button>"
+
+		+"<hr/>";
+
+		love("",gender, name);
+
+		let yes1 = document.getElementById("yes1");
+
+		yes1.addEventListener("click", ()=>{
+
+            let xx = "";
+
+            if(gender == "Male"){
+
+                x = 'Boyfriend'
+
+            }else{
+
+                x ="Girlfriend"
+
+            }
+
+            div.style.display="none";
+
+            document.getElementById("video").style.display="block";
+
+            document.getElementById("video").play();
+
+            loves("Successfully_"+name);
+
+            document.getElementById('demo').innerHTML = "Now you are my "+x+"  "+name;
+
+        })
+
+	}
+
+	
+
+	let ask_8 = (gen, name) => {
+
+		div.innerHTML = 
+
+
+
+		 "<h1>Have you ever loved me?</h1>"
+
+		+"<p>Anwser</p>"
+
+		+"<button id='yes'>Yes</button> "
+
+		+"<button id='no'>Never?</button>"
+
+		+"<hr/>";
+
+		love('Thanks you for Anwser, <br/> My Friend',"",name);
+
+    }
+
+	
+
+	
+
+
+
+	const love = (text1,gen,name) => {
+
+	    let gender = gen;
+
+	    text1 = "";
+
+	    let text = "";
+
+	    if(text1 == ""){
+
+	        text = "I love you too "+name;
+
+	    }else{
+
+	        text = text1;
+
+	    }
+
+	    
+
+		let no = document.getElementById("no");
+
+		let yes = document.getElementById("yes");
+
+	let no1 = document.getElementById("no1");
+
+
+
+	let yes1 = document.getElementById("yes1");
+
+
+
+
+
+		yes.addEventListener("click", ()=>{
+
+			document.querySelector('.result').style.opacity = '100%';
+
+		document.getElementById('demo').innerHTML = text;
+
+		loves("yes_love_"+name);
+
+		
+
+	    document.getElementById("audio").play();
+
+	let count = 15;
+
+		setInterval(function() {
+
+		    document.getElementById("timecount").innerHTML = count+"s";
+
+		    count--;
+
+		    if(count <= 0){
+
+		        count = 0;
+
+		        if(gender == "Male"){
+
+		            document.getElementById("audio").src=""
+
+		            ask_9(gender)
+
+		        }else if(gender == "Female"){
+
+		            document.getElementById("audio").src=""
+
+		            ask_9(gender, name)
+
+		        }else{
+
+		        location.reload()
+
+		        }
+
+		    }
+
+		}, 1000)
+
+
+
+no.style.display="none";
+
+		})
+
+		
+
+		
+
+	//	let checked = false;
+
+		
+
+		no.addEventListener("click", ()=>{
+
+	document.querySelector('.result').style.opacity = '100%';
+
+
+
+		document.getElementById('demo').innerHTML = 'Thanks you for Anwser, <br/> '+name;
+
+		loves("No_love_"+name);
+
+		
+
+		document.getElementById("audios").play();
+
+			let count = 60;
+
+
+
+		setInterval(function() {
+
+
+
+		    document.getElementById("timecount").innerHTML = count+"s";
+
+		    count--;
+
+		    if(count == 0){
+
+		        count = 0
+
+		        location.reload();
+
+		    }
+
+		}, 1000)
+
+		yes.style.display="none";
+
+		})			
+
+
+
+		
+
+	
+
+	/*	no.addEventListener("mouseover", () => {
+
+			if(!checked){
+
+				checked = true;
+
+				no.style.marginLeft="100px";
+
+			}else{
+
+				checked = false;
+
+				no.style.marginLeft="0";
+
+			}
+
+		}) */
+
+	} 
+
+</script>
 
 </body>
 
