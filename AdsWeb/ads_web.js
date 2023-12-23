@@ -415,7 +415,7 @@ for(var a = 0; a < numLink; a++){
 }
 
 
-xhttp.open("GET", "http://van.deth.x10.mx/AdsWeb/data.json", true);
+xhttp.open("GET", "./AdsWeb/data.json", true);
 
 
 xhttp.send();
